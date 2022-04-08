@@ -23,3 +23,9 @@ def test_case_4():
     n = 35
     r = 14930352
     assert climbStairs(n) == r
+
+
+def test_case_5():
+    n = 5
+    r = 8
+    assert climbStairs(n) == r
