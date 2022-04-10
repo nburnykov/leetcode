@@ -1,27 +1,5 @@
-from typing import List
-
-from add_two_numbers.add_two_numbers import ListNode, addTwoNumbers
-
-
-def create_linked_list(nums: List[int]) -> ListNode:
-    result = None
-
-    for n in nums[::-1]:
-        r = ListNode()
-        r.val = n
-        r.next = result
-        result = r
-
-    return result
-
-
-def read_linked_list(l: ListNode) -> list:
-    result = [l.val]
-    l_p = l.next
-    while l_p is not None:
-        result.append(l_p.val)
-        l_p = l_p.next
-    return result
+from add_two_numbers.add_two_numbers import addTwoNumbers
+from utils import create_linked_list, read_linked_list
 
 
 def test_case_ll():
@@ -44,8 +22,7 @@ def test_case_2():
 
 
 def test_case_3():
-    l1 = create_linked_list([9,9,9,9,9,9,9])
-    l2 = create_linked_list([9,9,9,9])
+    l1 = create_linked_list([9, 9, 9, 9, 9, 9, 9])
+    l2 = create_linked_list([9, 9, 9, 9])
     ll = addTwoNumbers(l1, l2)
     assert read_linked_list(ll) == [8, 9, 9, 9, 0, 0, 0, 1]
-
