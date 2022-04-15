@@ -1,4 +1,4 @@
-from two_sum.two_sum import twoSum
+from ARRAY.two_sum.app import twoSum
 
 
 def test_case_1():
