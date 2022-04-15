@@ -1,4 +1,4 @@
-from add_two_numbers.add_two_numbers import addTwoNumbers
+from add_two_numbers.app import addTwoNumbers
 from utils import create_linked_list, read_linked_list
 
 

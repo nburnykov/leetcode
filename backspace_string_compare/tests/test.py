@@ -1,4 +1,4 @@
-from backspace_string_compare.backspace_string_compare import backspaceCompare
+from backspace_string_compare.app import backspaceCompare
 
 
 # def test_case_add_1():
