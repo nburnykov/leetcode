@@ -1,4 +1,4 @@
-from next_right_pointer.binary_tree_array import compose_binary_tree, decompose_binary_tree
+from utils import compose_binary_tree, decompose_binary_tree
 from merge_two_binary_trees.merge_two_binary_trees import mergeTrees
 
 
