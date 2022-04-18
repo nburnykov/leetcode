@@ -1,4 +1,4 @@
-from reverse_linked_list.reverse_linked_list import reverseList
+from LINKED_STRUCTURES.reverse_linked_list.app import reverseList
 from utils import create_linked_list, read_linked_list
 
 

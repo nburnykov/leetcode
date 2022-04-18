@@ -1,5 +1,5 @@
 from utils import compose_binary_tree, decompose_binary_tree
-from merge_two_binary_trees.merge_two_binary_trees import mergeTrees
+from LINKED_STRUCTURES.merge_two_binary_trees.app import mergeTrees
 
 
 def test_compose_decompose_1():

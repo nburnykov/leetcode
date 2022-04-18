@@ -1,7 +1,7 @@
 from typing import Optional
 
-from merge_two_binary_trees.linked_list import LinkedList
-from merge_two_binary_trees.merge_two_binary_trees import TreeNode
+from utils import LinkedList
+from app import TreeNode
 
 
 def compose_binary_tree(tree_arr: list) -> Optional[TreeNode]:

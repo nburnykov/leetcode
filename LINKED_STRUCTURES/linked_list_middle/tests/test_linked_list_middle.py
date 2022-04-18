@@ -1,6 +1,6 @@
-from typing import List, Optional
+from typing import List
 
-from remove_nth_node.remove_nth_node import ListNode, removeNthFromEnd
+from LINKED_STRUCTURES.linked_list_middle.linked_list_middle import ListNode, middleNode
 
 
 def create_linked_list(nums: List[int]) -> ListNode:
@@ -15,9 +15,7 @@ def create_linked_list(nums: List[int]) -> ListNode:
     return result
 
 
-def read_linked_list(l: Optional[ListNode]) -> list:
-    if l is None:
-        return []
+def read_linked_list(l: ListNode) -> list:
     result = [l.val]
     l_p = l.next
     while l_p is not None:
@@ -28,22 +26,18 @@ def read_linked_list(l: Optional[ListNode]) -> list:
 
 def test_case_1():
     input = [1, 2, 3, 4, 5]
-    n = 2
-    output = [1, 2, 3, 5]
+    output = [3, 4, 5]
     ll = create_linked_list(input)
-    assert read_linked_list(removeNthFromEnd(ll, n)) == output
-
+    assert read_linked_list(middleNode(ll)) == output
 
 def test_case_2():
-    input = [1]
-    n = 1
-    output = []
+    input = [1, 2, 3, 4, 5, 6]
+    output = [4, 5, 6]
     ll = create_linked_list(input)
-    assert read_linked_list(removeNthFromEnd(ll, n)) == output
+    assert read_linked_list(middleNode(ll)) == output
 
 def test_case_3():
-    input = [1, 2]
-    n = 1
+    input = [1]
     output = [1]
     ll = create_linked_list(input)
-    assert read_linked_list(removeNthFromEnd(ll, n)) == output
+    assert read_linked_list(middleNode(ll)) == output

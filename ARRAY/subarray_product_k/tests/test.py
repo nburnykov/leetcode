@@ -1,4 +1,4 @@
-from subarray_product_k.subarray_product_k import numSubarrayProductLessThanK
+from ARRAY.subarray_product_k.app import numSubarrayProductLessThanK
 
 
 def test_case_1():

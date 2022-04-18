@@ -1,4 +1,4 @@
-from container_with_most_water.container_with_most_water import maxArea
+from ARRAY.container_with_most_water.app import maxArea
 
 
 def test_case_1():
