@@ -1,4 +1,4 @@
-from DFS.number_of_islands.app import numIslands
+from DFS_BFS.number_of_islands.app import numIslands
 
 
 def test_case_1():

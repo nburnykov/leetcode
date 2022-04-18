@@ -1,4 +1,4 @@
-from DFS.number_of_provinces.app import findCircleNum
+from DFS_BFS.number_of_provinces.app import findCircleNum
 
 
 def test_case_1():

@@ -1,4 +1,4 @@
-from DFS.max_area_of_island.app import maxAreaOfIsland
+from DFS_BFS.max_area_of_island.app import maxAreaOfIsland
 
 
 def test_case_1():

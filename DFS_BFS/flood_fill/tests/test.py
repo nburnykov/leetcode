@@ -1,4 +1,4 @@
-from DFS.flood_fill.app import floodFill
+from DFS_BFS.flood_fill.app import floodFill
 
 
 def test_case_1():
