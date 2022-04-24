@@ -1,4 +1,4 @@
-from permutations.permutations import permute
+from ARRAY.permutations.app import permute
 
 
 def test_case_1():

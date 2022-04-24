@@ -1,4 +1,4 @@
-from combinations.combinations import combine
+from ARRAY.combinations.app import combine
 
 
 def test_case_1():
