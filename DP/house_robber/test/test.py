@@ -1,4 +1,4 @@
-from DP.house_robber.house_robber import rob
+from DP.house_robber.app import rob
 
 
 def test_case_1():
