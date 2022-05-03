@@ -1,4 +1,4 @@
-from search_range.search_range import searchRange
+from ARRAY.search_range.app import searchRange
 
 
 def test_case_1():
