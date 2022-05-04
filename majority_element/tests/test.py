@@ -1,4 +1,4 @@
-from majority_element.majority_element import majorityElement
+from majority_element.app import majorityElement
 
 
 def test_case_1():

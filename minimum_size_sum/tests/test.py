@@ -1,4 +1,4 @@
-from minimum_size_sum.minimum_size_sum import minSubArrayLen
+from minimum_size_sum.app import minSubArrayLen
 
 
 def test_case_1():

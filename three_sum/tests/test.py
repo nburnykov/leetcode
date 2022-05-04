@@ -1,4 +1,4 @@
-from three_sum.three_sum import threeSum
+from three_sum.app import threeSum
 
 
 def test_case_1():

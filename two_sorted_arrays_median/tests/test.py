@@ -1,4 +1,4 @@
-from two_sorted_arrays_median.two_sorted_arrays_median import findMedianSortedArrays
+from two_sorted_arrays_median.app import findMedianSortedArrays
 
 
 def test_case_1():

@@ -1,4 +1,4 @@
-from search_rotated_sorted_array.search_rotated_sorted_array import search
+from search_rotated_sorted_array.app import search
 
 
 def test_case_1():

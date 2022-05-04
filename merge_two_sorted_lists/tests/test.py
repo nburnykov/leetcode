@@ -1,4 +1,4 @@
-from merge_two_sorted_lists.merge_two_sorted_lists import mergeTwoLists
+from merge_two_sorted_lists.app import mergeTwoLists
 from utils import create_linked_list, read_linked_list
 
 

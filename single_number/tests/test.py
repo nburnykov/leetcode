@@ -1,4 +1,4 @@
-from single_number.single_number import singleNumber
+from single_number.app import singleNumber
 
 
 def test_case_1():

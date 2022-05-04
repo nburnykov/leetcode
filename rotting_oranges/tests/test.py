@@ -1,4 +1,4 @@
-from rotting_oranges.rotting_oranges import orangesRotting
+from rotting_oranges.app import orangesRotting
 
 
 def test_case_1():

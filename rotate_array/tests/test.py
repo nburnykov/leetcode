@@ -1,4 +1,4 @@
-from rotate_array.rotate_array import Solution
+from rotate_array.app import Solution
 
 
 def test_case_1():

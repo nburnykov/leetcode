@@ -1,4 +1,4 @@
-from sorted_squares.sorted_squares import sortedSquares
+from sorted_squares.app import sortedSquares
 
 
 def test_case_1():

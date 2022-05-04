@@ -1,4 +1,4 @@
-from permutation_in_string.permutation_in_string import checkInclusion
+from permutation_in_string.app import checkInclusion
 
 
 def test_case_1():

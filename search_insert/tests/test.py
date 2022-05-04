@@ -1,4 +1,4 @@
-from search_insert.search_insert import Solution
+from search_insert.app import Solution
 
 
 def test_case_1():

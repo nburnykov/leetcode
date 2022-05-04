@@ -1,4 +1,4 @@
-from remove_duplicates_from_sorted_list.remove_duplicates_from_sorted_list import deleteDuplicates
+from remove_duplicates_from_sorted_list.app import deleteDuplicates
 from utils import create_linked_list, read_linked_list
 
 
