@@ -1,4 +1,4 @@
-from rotated_array_minimum.app import findMin
+from ARRAY.rotated_array_minimum.app import findMin
 
 
 def test_case_1():
