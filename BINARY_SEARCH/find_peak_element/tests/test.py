@@ -1,4 +1,4 @@
-from find_peak_element.find_peak_element import findPeakElement
+from BINARY_SEARCH.find_peak_element.app import findPeakElement
 
 
 def test_case_1():

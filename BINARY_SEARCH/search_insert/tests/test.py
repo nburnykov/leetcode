@@ -1,4 +1,4 @@
-from search_insert.app import Solution
+from BINARY_SEARCH.search_insert.app import Solution
 
 
 def test_case_1():

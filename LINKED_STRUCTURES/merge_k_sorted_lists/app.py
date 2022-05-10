@@ -3,7 +3,7 @@
 ###########################################################################################
 
 from typing import List, Optional
-import heapq
+from heapq import heappush, heappop
 
 # Definition for singly-linked list.
 class ListNode:
@@ -17,13 +17,13 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
 
     for ln in lists:  # heap init
         if ln:
-            heapq.heappush(heap, (ln.val, id(ln), ln.next))
+            heappush(heap, (ln.val, id(ln), ln.next))
 
     node_current = None
     node_head = None
 
     while len(heap) > 0:
-        v, _, n = heapq.heappop(heap)
+        v, _, n = heappop(heap)
         ln = ListNode(v)
         if not node_current:
             node_current = ln
@@ -32,7 +32,7 @@ def mergeKLists(lists: List[Optional[ListNode]]) -> Optional[ListNode]:
             node_current.next = ln
             node_current = ln
         if n:
-            heapq.heappush(heap, (n.val, id(n), n.next))
+            heappush(heap, (n.val, id(n), n.next))
 
     return node_head
 
