@@ -14,7 +14,7 @@ class TestApp(unittest.TestCase):
         k = 3
         n = 9
         r = [[1, 2, 6], [1, 3, 5], [2, 3, 4]]
-        self.assertEqual(sorted(combinationSum3(k, n), key=lambda x: x[0]), r)
+        self.assertEqual(sorted(combinationSum3(k, n)), r)
 
     def test_case_3(self):
         k = 4
