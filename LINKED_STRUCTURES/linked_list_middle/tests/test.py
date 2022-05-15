@@ -1,6 +1,6 @@
 from typing import List
 
-from LINKED_STRUCTURES.linked_list_middle.linked_list_middle import ListNode, middleNode
+from LINKED_STRUCTURES.linked_list_middle.app import ListNode, middleNode
 
 
 def create_linked_list(nums: List[int]) -> ListNode:
