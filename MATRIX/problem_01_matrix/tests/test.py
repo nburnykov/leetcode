@@ -1,4 +1,4 @@
-from problem_01_matrix.app import updateMatrix
+from MATRIX.problem_01_matrix.app import updateMatrix
 
 
 def test_case_1():

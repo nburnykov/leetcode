@@ -1,3 +1,7 @@
+###########################################################################################
+# leetcode problem https://leetcode.com/problems/multiply-strings/
+###########################################################################################
+
 def multiply(num1: str, num2: str) -> str:
     if len(num1) < len(num2):
         num1, num2 = num2, num1

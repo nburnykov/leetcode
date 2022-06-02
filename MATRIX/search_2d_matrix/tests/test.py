@@ -1,4 +1,4 @@
-from search_2d_matrix.app import searchMatrix
+from MATRIX.search_2d_matrix.app import searchMatrix
 
 
 def test_case_1():
