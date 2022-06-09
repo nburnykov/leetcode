@@ -32,3 +32,15 @@ def test_case_6():
     s = "(()()"
     c = 4
     assert longestValidParentheses(s) == c
+
+
+def test_case_7():
+    s = "(()(()(()))"
+    c = 10
+    assert longestValidParentheses(s) == c
+
+
+def test_case_8():
+    s = ")()())()()("
+    c = 4
+    assert longestValidParentheses(s) == c
