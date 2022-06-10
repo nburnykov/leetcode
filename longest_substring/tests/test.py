@@ -1,4 +1,4 @@
-from longest_substring.longest_substring import lengthOfLongestSubstring
+from longest_substring.app import lengthOfLongestSubstring
 
 
 def test_case_1():
