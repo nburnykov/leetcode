@@ -1,4 +1,4 @@
-from interval_list_intersections.interval_list_intersections import intervalIntersection
+from interval_list_intersections.app import intervalIntersection
 
 
 def test_case_1():

@@ -1,4 +1,4 @@
-from find_anagrams.find_anagrams import findAnagrams
+from find_anagrams.app import findAnagrams
 
 
 def test_case_1():
