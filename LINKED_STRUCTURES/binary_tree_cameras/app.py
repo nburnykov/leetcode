@@ -8,6 +8,9 @@ from utils import TreeNode
 
 
 def minCameraCover(root: Optional[TreeNode]) -> int:
+    """
+    camera -> observed -> observeme -> camera -> ...  optimal state sequence
+    """
 
     def check_subtree(subroot: TreeNode) -> (str, int):
         if subroot is None:

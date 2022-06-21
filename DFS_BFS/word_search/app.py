@@ -18,6 +18,7 @@ def exist(board: List[List[str]], word: str) -> bool:
                         and 0 <= cy < len(board[0]) \
                         and board[cx][cy] == sequence[i + 1] \
                         and (cx, cy) not in seen:
+                    board[cx][cy] = '@'
                     s = seen.copy()
                     s.add((cx, cy))
                     q.append((cx, cy, i + 1, s))
