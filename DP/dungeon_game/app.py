@@ -17,7 +17,7 @@ def calculateMinimumHP(dungeon: List[List[int]]) -> int:
             path = path if path != float("-inf") else 0  # right bottom corner case, stop cell, no infinite damage
             path = path + dungeon[x][y]
 
-            # in order to enter cell with positive path balance you need 0 (+1) health
+            # in order to enter a cell with positive path balance you need 0 (+1) health
             health[x][y] = path if path < 0 else 0
 
     return -health[0][0] + 1
