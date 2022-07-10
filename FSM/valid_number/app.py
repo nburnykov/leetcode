@@ -3,7 +3,6 @@
 ###########################################################################################
 
 def isNumber(s: str) -> bool:
-
     """
     A decimal number can be split up into these components (in order):
 
@@ -37,15 +36,20 @@ def isNumber(s: str) -> bool:
     final_states = {1, 2, 3, 6}
     current_state = -1
     state_passed = [current_state]
+
+    digits = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'}
+    plus_minus = {"+", "-"}
+    e = {'e', 'E'}
+
     for c in s:
         new_state = None
-        if c in {'0','1','2','3','4','5','6','7','8','9'}:
+        if c in digits:
             new_state = fsm.get((current_state, '09'))
-        if c in {"+", "-"}:
+        if c in plus_minus:
             new_state = fsm.get((current_state, '+-'))
         if c == '.':
             new_state = fsm.get((current_state, '.'))
-        if c in {'e', 'E'}:
+        if c in e:
             new_state = fsm.get((current_state, 'eE'))
         if new_state is None:
             return False
@@ -53,7 +57,7 @@ def isNumber(s: str) -> bool:
             current_state = new_state
             state_passed.append(new_state)
 
-    if current_state == 2:  # cannot be just . or -.  must include digit
+    if current_state == 2:  # cannot be just . or -.  must include digit before dot
         return 1 in state_passed
 
     if current_state in {6, 7, 8}:
