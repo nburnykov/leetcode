@@ -1,6 +1,4 @@
-import bisect
-
-from ARRAY.number_of_increasing_seq.app import findNumberOfLIS, binary_search
+from DP.number_of_increasing_seq.app import findNumberOfLIS, binary_search
 
 
 def test_bin_search_1():
