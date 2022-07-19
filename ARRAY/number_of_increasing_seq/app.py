@@ -6,6 +6,12 @@ from typing import List
 
 
 def binary_search(arr: List[int], target: int, left: bool = True) -> int:
+    """
+    There is a strange behavior with left=False, function substituted with bisect
+    """
+
+    if len(arr) == 0:
+        return 0
     if target > arr[-1]:
         return len(arr)
     if target < arr[0]:
@@ -31,14 +37,14 @@ def findNumberOfLIS(nums: List[int]) -> int:
     stacks, stack_mins, lis_count = [[float("inf")]], [float("-inf")], [[0, 1]]
     for n in nums:
         if n > stack_mins[-1]:
-            idx = binary_search(stacks[-1], -n, left=False)
+            idx = bisect.bisect(stacks[-1], -n)
             lis = lis_count[-1][-1] - lis_count[-1][idx]
             lis_count.append([0, lis])
             stacks.append([-n])
             stack_mins.append(n)
         else:
-            idx = binary_search(stack_mins, n)
-            lis_idx = binary_search(stacks[idx - 1], -n, left=False)
+            idx = bisect.bisect_left(stack_mins, n)
+            lis_idx = bisect.bisect(stacks[idx - 1], -n)
             lis = lis_count[idx - 1][-1] - lis_count[idx - 1][lis_idx]
             lis_count[idx].append(lis_count[idx][-1] + lis)
             stack_mins[idx] = n
