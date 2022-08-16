@@ -1,4 +1,4 @@
-from DFS_BFS.combination_sum_4.app import combinationSum4
+from DP.combination_sum_4.app import combinationSum4
 
 
 def test_case_1():
