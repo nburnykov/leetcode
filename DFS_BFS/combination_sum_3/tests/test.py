@@ -1,6 +1,6 @@
 import unittest
 
-from DFS_BFS.combination_sum_iii.app import combinationSum3
+from DFS_BFS.combination_sum_3.app import combinationSum3
 
 
 class TestApp(unittest.TestCase):
