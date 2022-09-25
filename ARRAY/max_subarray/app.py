@@ -6,7 +6,7 @@ from typing import List
 
 def maxSubArray(nums: List[int]) -> int:
     """
-    Kadane's algo
+    Kadane'enc_s algo
     Current max is either prev_max + current_element or current element if this is bigger than prev_max
 
     """

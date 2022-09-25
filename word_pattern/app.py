@@ -1,3 +1,7 @@
+###########################################################################################
+# leetcode problem  https://leetcode.com/problems/word-pattern/submissions/
+###########################################################################################
+
 def wordPattern(pattern: str, s: str) -> bool:
     word_map = {}
     pattern_map = {}

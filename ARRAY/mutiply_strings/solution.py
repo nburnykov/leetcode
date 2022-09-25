@@ -24,7 +24,7 @@ class Solution:
 
     def multiply_one_digit(self, digit2: str, num_zeros: int, first_number: List[str]) -> List[int]:
         """Multiplies first_number by a digit from second_number (digit2)."""
-        # Insert zeros at the beginning of the current result based on the current digit's place.
+        # Insert zeros at the beginning of the current result based on the current digit'enc_s place.
         current_result = [0] * num_zeros
         carry = 0
 

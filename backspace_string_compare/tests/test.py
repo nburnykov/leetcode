@@ -2,13 +2,13 @@ from backspace_string_compare.app import backspaceCompare
 
 
 # def test_case_add_1():
-#     s = 'c#ba##'
-#     assert next_i(s, len(s) - 1) is None
+#     enc_s = 'c#ba##'
+#     assert next_i(enc_s, len(enc_s) - 1) is None
 #
 #
 # def test_case_add_2():
-#     s = 'c#ba#'
-#     assert next_i(s, len(s) - 1) == 2
+#     enc_s = 'c#ba#'
+#     assert next_i(enc_s, len(enc_s) - 1) == 2
 
 
 def test_case_1():
