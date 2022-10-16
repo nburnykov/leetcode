@@ -11,7 +11,7 @@ class ListNode:
         self.next = next
 
 
-def removeNthFromEnd(head: Optional[ListNode], n: int) -> Optional[ListNode]:
+def removeNthFromEnd_old(head: Optional[ListNode], n: int) -> Optional[ListNode]:
     if head is None:
         return
 
@@ -47,3 +47,28 @@ def removeNthFromEnd(head: Optional[ListNode], n: int) -> Optional[ListNode]:
         return end_b
 
     return
+
+
+def removeNthFromEnd(head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    if head is None:
+        return None
+
+    dummy = ListNode()
+    dummy.next = head
+    current = dummy
+    ln = 0
+    while current.next is not None:  # find list length
+        ln += 1
+        current = current.next
+
+    index_to_remove = ln - n
+
+    leader = head
+    follower = dummy
+    for i in range(index_to_remove):
+        leader = leader.next
+        follower = follower.next
+
+    follower.next = leader.next  # remove leader
+
+    return dummy.next

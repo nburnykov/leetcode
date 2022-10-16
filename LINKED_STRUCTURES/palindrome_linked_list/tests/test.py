@@ -1,4 +1,4 @@
-from LINKED_STRUCTURES.palindrome_ll.app import isPalindrome
+from LINKED_STRUCTURES.palindrome_linked_list.app import isPalindrome
 from utils import create_linked_list
 
 

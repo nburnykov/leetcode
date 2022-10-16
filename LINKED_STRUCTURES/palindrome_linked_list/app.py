@@ -6,26 +6,25 @@ from utils import ListNode
 
 
 def isPalindrome(head: Optional[ListNode]) -> bool:
-    # find middle node
-    fast = slow = head
+    fast = head
+    slow = head
     while fast and fast.next:
         fast = fast.next.next
         slow = slow.next
 
-    # reverse second half from slow pointer to the end
-    ll2 = ll2_nxt = None
+    current = None
+    nxt = None
     while slow:
-        ll2 = slow
+        current = slow
         slow = slow.next
-        ll2.next = ll2_nxt
-        ll2_nxt = ll2
+        current.next = nxt
+        nxt = current
 
-    # compare first untouched part and second reversed
-    while ll2:
-        if head.val != ll2.val:
+    while current:
+        if head.val != current.val:
             return False
         head = head.next
-        ll2 = ll2.next
+        current = current.next
 
     return True
 
