@@ -3,43 +3,38 @@
 ###########################################################################################
 
 from collections import deque
-from typing import Optional
+from typing import Optional, Dict
 
 from utils import TreeNode
 
 
-def diameterOfBinaryTreeIterative(root: Optional[TreeNode]) -> int:
-    def subDiameter(sub_root: TreeNode) -> int:
-        max_l, max_r = 0, 0
-        q = deque([(1, sub_root.right, True), (1, sub_root.left, False)])
-        while len(q) > 0:
-            depth, node, is_right = q.popleft()
-            if node is None:
-                continue
-            if is_right:
-                max_r = max(max_r, depth)
-            else:
-                max_l = max(max_l, depth)
-            q.append((depth + 1, node.left, is_right))
-            q.append((depth + 1, node.right, is_right))
-
-        return max_l + max_r
-
-    q = deque([root])
-    diameter = 0
-    while len(q) > 0:
-        node = q.popleft()
-        if node is None:
-            continue
-        depth = subDiameter(node)
-        diameter = max(diameter, depth)
-        q.append(node.left)
-        q.append(node.right)
-
-    return diameter
-
-
 def diameterOfBinaryTree(root: Optional[TreeNode]) -> int:
+    if root is None:
+        return 0
+    diameters: Dict[str, int] = {}
+    seen = set()
+    max_diameter = 0
+    q = [(root, "root", "L")]
+    while len(q) > 0:
+        node, parent_id, prefix = q[-1]
+        node_id = id(node)
+        seen.add(node_id)
+        if node.left is not None and id(node.left) not in seen:
+            q.append((node.left, node_id, "L"))
+            continue
+        if node.right is not None and id(node.right) not in seen:
+            q.append((node.right, node_id, "R"))
+            continue
+        l_d = diameters.pop(f"L_{node_id}", 0)
+        r_d = diameters.pop(f"R_{node_id}", 0)
+        max_diameter = max(max_diameter, l_d + r_d)
+        diameters[f"{prefix}_{parent_id}"] = max(l_d, r_d) + 1
+        q.pop(-1)
+    return max_diameter
+
+
+
+def diameterOfBinaryTreeRecursive(root: Optional[TreeNode]) -> int:
     best = 0
 
     def diameter(sub_root: Optional[TreeNode]) -> int:
