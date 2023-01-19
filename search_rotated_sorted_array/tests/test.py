@@ -55,3 +55,10 @@ def test_case_8():
     target = 1
     out = 2
     assert search(nums, target) == out
+
+
+def test_case_9():
+    nums = [1, 3]
+    target = 4
+    out = -1
+    assert search(nums, target) == out

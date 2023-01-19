@@ -5,35 +5,35 @@
 from typing import List
 
 
-def search(nums: List[int], target: int) -> int:
+def search2(nums: List[int], target: int) -> int:
+    """
+
+    """
     l, r = 0, len(nums) - 1
     while l <= r:
         mid = (l + r) // 2
 
-        if nums[mid] == target:
+        pivot, right, left = nums[mid], nums[r], nums[l]
+        if pivot == target:
             return mid
-        if nums[r] == target:
+        if right == target:
             return r
-        if nums[l] == target:
+        if left == target:
             return l
 
-        if (target > nums[l]) and (nums[mid] >= nums[l]):
-            if nums[mid] < target:
+        if (target > left) and (pivot >= left) or \
+                (target < right) and (pivot <= right):
+            # if target and pivot lie on the same slope (left or right)
+            if pivot < target:
                 l = mid + 1
             else:
                 r = mid - 1
             continue
 
-        if (target < nums[r]) and (nums[mid] <= nums[r]):
-            if nums[mid] < target:
-                l = mid + 1
-            else:
-                r = mid - 1
-            continue
-
-        if nums[mid] < target:
+        if pivot < target:  # target and pivot on different slopes
             r = mid - 1
         else:
             l = mid + 1
 
     return -1
+
