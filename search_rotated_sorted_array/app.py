@@ -5,7 +5,7 @@
 from typing import List
 
 
-def search2(nums: List[int], target: int) -> int:
+def search(nums: List[int], target: int) -> int:
     """
 
     """
