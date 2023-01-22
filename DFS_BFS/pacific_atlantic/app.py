@@ -3,6 +3,11 @@ from typing import List
 
 
 def pacificAtlantic(heights: List[List[int]]) -> List[List[int]]:
+    """
+    The crucial point here is to start independent DFS from every coastal point
+    I've tried to process all pacific/atlantic points together but failed a test with huge map
+    (not sure what's the root cause, maybe parallel processing blocks some paths)
+    """
     def dfs(start_point: (int, int)) -> set:
         stack = [start_point]
         seen = {start_point}
