@@ -16,8 +16,6 @@ def threeSumClosest(nums: List[int], target: int) -> int:
         j = i + 1
         k = len_nums - 1
         while j < k:
-            if nums[i] + nums[j] > closest:  # early stopping
-                break
             s = nums[i] + nums[j] + nums[k]
             d = s - target
             if abs(d) < closest:

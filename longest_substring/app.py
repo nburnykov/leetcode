@@ -2,7 +2,7 @@
 # leetcode problem  https://leetcode.com/problems/longest-substring-without-repeating-characters/
 ###########################################################################################
 
-def lengthOfLongestSubstring(s: str) -> int:
+def lengthOfLongestSubstring2(s: str) -> int:
     if len(s) == 0:  # edge case
         return 0
 
@@ -24,3 +24,45 @@ def lengthOfLongestSubstring(s: str) -> int:
         pointer_1 += 1
 
     return max_len
+
+
+def lengthOfLongestSubstring(s: str) -> int:
+    if len(s) == 0:
+        return 0
+
+    cache = set()
+    p1, p2, result = 0, 0, 0
+
+    while p1 < len(s):
+        if s[p1] not in cache:
+            cache.add(s[p1])
+            result = max(result, len(cache))
+            p1 += 1
+        else:
+            cache.remove(s[p2])
+            p2 += 1
+
+    return result
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
