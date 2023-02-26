@@ -27,3 +27,17 @@ class Solution:
                 return -1
 
             pivot_prev = pivot
+
+
+def search(nums: List[int], target: int) -> int:
+    l, r = 0, len(nums) - 1
+    while l <= r:
+        pivot = (r + l) // 2
+        if nums[pivot] == target:
+            return pivot
+        if nums[pivot] < target:
+            l = pivot + 1
+        else:
+            r = pivot - 1
+
+    return -1
