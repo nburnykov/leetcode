@@ -6,6 +6,9 @@ from typing import List
 
 
 def partitionLabels(s: str) -> List[int]:
+    """
+    The same idea as in merge intervals problem
+    """
     labelmap = OrderedDict()
     for pos, char in enumerate(s):
         if char not in labelmap:
