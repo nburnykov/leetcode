@@ -4,7 +4,7 @@
 from typing import List
 
 
-def longestCommonPrefix(strs: List[str]) -> str:
+def longestCommonPrefix2(strs: List[str]) -> str:
     if len(strs) == 0:
         return ""
     reference = strs[0]
@@ -20,3 +20,17 @@ def longestCommonPrefix(strs: List[str]) -> str:
             return ""
 
     return reference
+
+
+def longestCommonPrefix(strs: List[str]) -> str:
+    min_len = min([len(st) for st in strs])
+    result = []
+    for i in range(min_len):
+        char_set = set()
+        for st in strs:
+            char_set.add(st[i])
+        if len(char_set) == 1:
+            result.append(char_set.pop())
+        else:
+            break
+    return "".join(result)
