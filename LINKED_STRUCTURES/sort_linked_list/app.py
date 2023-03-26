@@ -78,13 +78,3 @@ def sortList(head: Optional[ListNode]) -> Optional[ListNode]:
         step *= 2
 
     return dummy_head.next
-
-
-
-
-
-
-
-
-
-

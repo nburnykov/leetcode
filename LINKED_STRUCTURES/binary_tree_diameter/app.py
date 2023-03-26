@@ -11,24 +11,21 @@ from utils import TreeNode
 def diameterOfBinaryTree(root: Optional[TreeNode]) -> int:
     if root is None:
         return 0
-    diameters: Dict[str, int] = {}
-    seen = set()
+    diameters: Dict[int, int] = {id(None): 0}
     max_diameter = 0
-    q = [(root, "root", "L")]
+    q = [root]
     while len(q) > 0:
-        node, parent_id, prefix = q[-1]
-        node_id = id(node)
-        seen.add(node_id)
-        if node.left is not None and id(node.left) not in seen:
-            q.append((node.left, node_id, "L"))
+        node = q[-1]
+        if id(node.left) not in diameters:
+            q.append(node.left)
             continue
-        if node.right is not None and id(node.right) not in seen:
-            q.append((node.right, node_id, "R"))
+        if id(node.right) not in diameters:
+            q.append(node.right)
             continue
-        l_d = diameters.pop(f"L_{node_id}", 0)
-        r_d = diameters.pop(f"R_{node_id}", 0)
+        l_d = diameters.pop(id(node.left)) if node.left is not None else 0
+        r_d = diameters.pop(id(node.right)) if node.right is not None else 0
         max_diameter = max(max_diameter, l_d + r_d)
-        diameters[f"{prefix}_{parent_id}"] = max(l_d, r_d) + 1
+        diameters[id(node)] = max(l_d, r_d) + 1
         q.pop(-1)
     return max_diameter
 
