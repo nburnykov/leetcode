@@ -9,3 +9,13 @@ def test_case_1():
 def test_case_2():
     nums = [1, 2, 3, 5]
     assert not canPartition(nums)
+
+
+def test_case_3():
+    nums = [2, 2, 3, 5]
+    assert not canPartition(nums)
+
+
+def test_case_4():
+    nums = [14, 9, 8, 4, 3, 2]
+    assert not canPartition(nums)

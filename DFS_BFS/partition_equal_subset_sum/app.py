@@ -27,3 +27,25 @@ def canPartition(nums: List[int]) -> bool:
 
     return False
 
+
+def canPartition2(nums: List[int]) -> bool:
+    # sliding window doesn't work here, because there could be gaps in sequences that produce the right sum
+    sorted_nums = sorted(nums)
+    if sum(sorted_nums) % 2 != 0:
+        return False
+
+    target_sum = sum(sorted_nums) // 2
+    l, r = 0, 0
+    s = 0
+    while r < len(sorted_nums) and l < len(sorted_nums):
+        if s == target_sum:
+            return True
+        if s > target_sum:
+            s -= sorted_nums[l]
+            l += 1
+        else:
+            s += sorted_nums[r]
+            r += 1
+
+    return False
+
